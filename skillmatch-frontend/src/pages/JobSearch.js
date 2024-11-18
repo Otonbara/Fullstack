@@ -8,17 +8,18 @@ const JobSearch = () => {
   const [filteredJobs, setFilteredJobs] = useState([]);
 
   useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/api/jobs/list/');
-        setJobs(response.data);
-        setFilteredJobs(response.data);
-      } catch (error) {
-        console.error('Error fetching jobs:', error);
-      }
-    };
+    // Fake job data for testing
+    const fakeJobs = [
+      { id: 1, title: 'Software Engineer', location: 'New York' },
+      { id: 2, title: 'Product Manager', location: 'San Francisco' },
+      { id: 3, title: 'Data Scientist', location: 'Remote' },
+      { id: 4, title: 'Front-End Developer', location: 'Los Angeles' },
+      { id: 5, title: 'Back-End Developer', location: 'Chicago' },
+      { id: 6, title: 'UX/UI Designer', location: 'Austin' },
+    ];
 
-    fetchJobs();
+    setJobs(fakeJobs);
+    setFilteredJobs(fakeJobs); // Initially showing all jobs
   }, []);
 
   const handleSearch = ({ title, location }) => {
