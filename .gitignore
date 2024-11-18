@@ -1,3 +1,6 @@
 # .gitignore
 .env
 venv/
+
+# Ignore Firebase service account credentials
+firebase-credentials.json

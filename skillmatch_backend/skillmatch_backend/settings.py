@@ -19,7 +19,7 @@ from firebase_admin import credentials
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Firebase Credentials File
-FIREBASE_CREDENTIALS = BASE_DIR / 'skillmatch-48395-firebase-adminsdk-tiob5-f1d0aac23b.json'
+FIREBASE_CREDENTIALS = BASE_DIR / 'firebase-credentials.json'
 
 # Check if the Firebase credentials file exists
 if not FIREBASE_CREDENTIALS.is_file():
@@ -34,7 +34,7 @@ if not firebase_admin._apps:
 
 
 # Quick-start development settings - unsuitable for production
-SECRET_KEY = 'django-insecure-jwttr)w3zzb*@a&nu%qr6a6y!9t5wbfkm$y-wev!*xj6-6xjis'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 DEBUG = True
 
