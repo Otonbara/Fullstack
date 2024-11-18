@@ -4,3 +4,4 @@ venv/
 
 # Ignore Firebase service account credentials
 firebase-credentials.json
+skillmatch-frontend/src/firebaseConfig.js
